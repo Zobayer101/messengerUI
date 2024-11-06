@@ -1,16 +1,27 @@
-import {StyleSheet, Text, TouchableOpacity, View, Image} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  Image,
+  Alert,
+} from 'react-native';
 import React from 'react';
 import {ScrollView} from 'react-native-gesture-handler';
 import Bar from 'react-native-vector-icons/EvilIcons';
 import Column from 'react-native-vector-icons/Feather';
 import Messages from 'react-native-vector-icons/FontAwesome';
+import {useNavigation} from '@react-navigation/native';
 // let color = '#0f0';
 const Chats = () => {
+  const Navigate = useNavigation();
   return (
     <>
       <ScrollView>
         <View style={style.OuterSherchBOx}>
-          <TouchableOpacity style={style.SearchBOx}>
+          <TouchableOpacity
+            style={style.SearchBOx}
+            onPress={() => Navigate.navigate('Search')}>
             <Bar
               name="search"
               size={30}
